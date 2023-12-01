@@ -173,19 +173,6 @@ class myModel(nn.Module):
         super(myModel,self).__init__()
         model_dense=models.densenet161(pretrained=True)
         self.features=nn.Sequential(*list(model_dense.features.children())[:-1])            
-        # self.conv1= nn.Sequential(nn.Conv2d(in_channels=2208,
-        #                                 out_channels=1104,
-        #                                   kernel_size=1,
-        #                                 stride=1,
-        #                                 padding=0),
-        #                     nn.Dropout2d(p=0.5),
-        #                       nn.BatchNorm2d(1104))
-                    
-        # self.relu1 = nn.ReLU(inplace=True)
-        # self.relu2 = nn.ReLU(inplace = True)
-        # self.norm1 = nn.BatchNorm2d(4416);
-        # self.relu3 = nn.ReLU(inplace=True);
-        # self.classifier=nn.Linear((4416),num_classes)
 
     def forward(self,x):
 
